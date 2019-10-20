@@ -60,7 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Layout Inf\BackgroundManager.cs" />
+    <Compile Include="Assets\Scripts\Layout Inf\BoardManager.cs" />
     <Compile Include="Assets\Scripts\Layout Inf\ElementInfo.cs" />
+    <Compile Include="Assets\Scripts\Layout Inf\ReadBlockInfo.cs" />
+    <None Include="Assets\JsonDotNet\link.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/minhm/OneDrive/Desktop/Platformer game/Platformer-Gamer/ITplus platformer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -276,6 +280,9 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.9f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Users/minhm/OneDrive/Desktop/Platformer game/Platformer-Gamer/ITplus platformer/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/minhm/OneDrive/Desktop/Platformer game/Platformer-Gamer/ITplus platformer/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
