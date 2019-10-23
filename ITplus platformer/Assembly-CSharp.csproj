@@ -60,12 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\IActor.cs" />
-    <Compile Include="Assets\Scripts\Layout Inf\BackgroundManager.cs" />
-    <Compile Include="Assets\Scripts\Layout Inf\BoardManager.cs" />
+    <Compile Include="Assets\Scripts\Characters\IActor.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player.cs" />
     <Compile Include="Assets\Scripts\Layout Inf\ElementInfo.cs" />
     <Compile Include="Assets\Scripts\Layout Inf\ReadBlockInfo.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Setting\BackgroundManager.cs" />
+    <Compile Include="Assets\Scripts\Setting\BoardManager.cs" />
+    <Compile Include="Assets\Scripts\Setting\FollowCamera.cs" />
     <None Include="Assets\JsonDotNet\link.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/minhm/OneDrive/Desktop/Platformer game/Platformer-Gamer/ITplus platformer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
