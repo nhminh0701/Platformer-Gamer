@@ -19422,7 +19422,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaWidth: 3
-  areaHeight: 3
+  areaHeight: 4
+  camSpeed: 1
 --- !u!1001 &1579766141
 PrefabInstance:
   m_ObjectHideFlags: 0

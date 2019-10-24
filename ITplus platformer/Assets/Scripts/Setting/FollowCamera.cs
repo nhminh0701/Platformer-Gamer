@@ -8,18 +8,21 @@ public class FollowCamera : MonoBehaviour
     [Header("Stationary region parameters within Camera")]
     [SerializeField] float areaWidth;
     [SerializeField] float areaHeight;
+    [SerializeField] float camSpeed;
 
     Transform player;
     Camera myCamera;
-    Vector3 cameraPos;
 
-    Vector3 playerPositionInScreen;
+    Vector3 camPos;
+    Vector3 targetPos;
+    float distanceX;
+    float distanceY;
+    float targetXPos;
+    float targetYPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-
         SetUpCamera();
     }
 
@@ -34,7 +37,6 @@ public class FollowCamera : MonoBehaviour
         }
 
         myCamera = Camera.main;
-        cameraPos = myCamera.transform.position;
     }
 
     // Update is called once per frame
@@ -43,33 +45,35 @@ public class FollowCamera : MonoBehaviour
         FollowObject(player);
     }
 
-    private void FollowObject(Transform targetPosition)
+    private void FollowObject(Transform player)
     {
-        AdjustXDirection(targetPosition);
-        AdjustYDirection(targetPosition);
-    }
-
-    private void AdjustYDirection(Transform targetPosition)
-    {
-        float distanceYDir = targetPosition.position.y - cameraPos.y;
-
-        if (Mathf.Abs(distanceYDir) > areaHeight)
+        distanceX = player.position.x - myCamera.transform.position.x;
+        if (Mathf.Abs(distanceX) > areaWidth)
         {
-            cameraPos.y = Mathf.Clamp(cameraPos.y, targetPosition.position.y - areaHeight, targetPosition.position.y + areaHeight);
-
-            myCamera.transform.position = cameraPos;
+            targetXPos = myCamera.transform.position.x + areaWidth * Mathf.Sign(distanceX);
         }
-    }
-
-    private void AdjustXDirection(Transform targetPosition)
-    {
-        float distanceXDir = targetPosition.position.x - cameraPos.x;
-
-        if (Mathf.Abs(distanceXDir) > areaWidth)
+        else
         {
-            cameraPos.x = Mathf.Clamp(cameraPos.x, targetPosition.position.x - areaWidth, targetPosition.position.x + areaWidth);
-
-            myCamera.transform.position = cameraPos;
+            targetXPos = myCamera.transform.position.x;
         }
+
+        distanceY = player.position.y - myCamera.transform.position.y;
+        if (Mathf.Abs(distanceY) > areaHeight)
+        {
+            targetYPos = myCamera.transform.position.y + areaHeight * Mathf.Sign(distanceY);
+        }
+        else
+        {
+            targetYPos = myCamera.transform.position.y;
+        }
+
+        targetPos = new Vector3(targetXPos, targetYPos, myCamera.transform.position.z);
+
+        camPos = Vector3.Lerp(myCamera.transform.position, targetPos, camSpeed*Time.deltaTime);
+        myCamera.transform.position = camPos;
     }
+
+
+
+
 }
