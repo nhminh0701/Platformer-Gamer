@@ -47,6 +47,7 @@ public class FollowCamera : MonoBehaviour
 
     private void FollowObject(Transform player)
     {
+        // Check horizontal axis if player excess cameraboundary
         distanceX = player.position.x - myCamera.transform.position.x;
         if (Mathf.Abs(distanceX) > areaWidth)
         {
@@ -57,6 +58,7 @@ public class FollowCamera : MonoBehaviour
             targetXPos = myCamera.transform.position.x;
         }
 
+        // Check vertical axis if player excess cameraboundary
         distanceY = player.position.y - myCamera.transform.position.y;
         if (Mathf.Abs(distanceY) > areaHeight)
         {
@@ -69,6 +71,7 @@ public class FollowCamera : MonoBehaviour
 
         targetPos = new Vector3(targetXPos, targetYPos, myCamera.transform.position.z);
 
+        // Using Lerp function to move smothly by frame
         camPos = Vector3.Lerp(myCamera.transform.position, targetPos, camSpeed*Time.deltaTime);
         myCamera.transform.position = camPos;
     }

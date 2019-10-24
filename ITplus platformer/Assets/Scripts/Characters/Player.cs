@@ -55,8 +55,8 @@ public class Player : MonoBehaviour, IActor
     {
         // Preventing air jumping
         if (!myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))) return;
-        myRigidbody.AddForce(jumpForce);
         myAnimator.SetTrigger("Jump");
+        myRigidbody.AddForce(jumpForce);
     }
 
     /// <summary>
