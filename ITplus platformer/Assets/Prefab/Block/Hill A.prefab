@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8735298448293017744}
   - component: {fileID: 7406738433311201525}
   - component: {fileID: 7219593087184491399}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hill A
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

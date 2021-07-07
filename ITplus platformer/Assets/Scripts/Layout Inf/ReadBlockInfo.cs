@@ -18,7 +18,6 @@ public class ReadBlockInfo : MonoBehaviour
         for (var index = 0; index < currentBlocks.Length; index ++)
         {
             BlockInfo newBlock = new BlockInfo(currentBlocks[index].GetBlockID(), currentBlocks[index].transform.position.x, currentBlocks[index].transform.position.y);
-            Debug.Log(newBlock.position.x + " " + currentBlocks[index].transform.position.y);
             blockInforList.Add(index, newBlock);
         }
 
